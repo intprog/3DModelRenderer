@@ -3,6 +3,10 @@ project(3DModelRenderer)
 include(CTest)
 option(BUILD_TESTS "Build unit tests" OFF)
 
+# Locate GTest
+find_package(GTest REQUIRED)
+include_directories(${GTEST_INCLUDE_DIRS})
+
 set(CMAKE_BUILD_TYPE Debug)
 
 include_directories(src)
@@ -11,7 +15,7 @@ link_directories(./)
 
 set(APP_NAME main)
 add_executable(${APP_NAME} main.cc)
-target_link_libraries(${APP_NAME} PRIVATE pthread glut GLU GL) 
+target_link_libraries(${APP_NAME} PRIVATE glut GLU GL ${GTEST_LIBRARIES} pthread) 
 #add_dependencies(${APP_NAME} ${LIB})
 
 message(STATUS "Tests building")
