@@ -14,7 +14,7 @@ add_compile_options(-std=c++11)
 link_directories(./)
 
 set(APP_NAME main)
-add_executable(${APP_NAME} main.cc)
+add_executable(${APP_NAME} main.cc graphic_operations/graphic_operations.cc graphic_operations/tests.cc)
 target_link_libraries(${APP_NAME} PRIVATE glut GLU GL ${GTEST_LIBRARIES} pthread) 
 #add_dependencies(${APP_NAME} ${LIB})
 

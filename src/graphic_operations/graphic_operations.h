@@ -1,6 +1,7 @@
 
 class Point {
  public:
+  Point(){};
   Point(double x, double y): position_x(x), position_y(y){};
   double GetPositionX(void){return position_x;};
   double GetPositionY(void){return position_y;};
